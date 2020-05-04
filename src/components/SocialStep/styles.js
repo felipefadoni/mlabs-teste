@@ -87,7 +87,7 @@ export const SocialStepUi = styled.li`
     background-color: #ed750a;
   }
 
-  .google_mybusiness {
+  .google_business {
     background-color: #4285f4;
     background: linear-gradient(225deg, #7ab1f9 0%, #4285f4 100%);
   }
