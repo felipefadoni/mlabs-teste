@@ -5,6 +5,10 @@ import { colors } from '../../styles/global';
 export const ContentUi = styled(Container)`
   padding: 46px 78px;
 
+  @media (min-width: 0px) and (max-width: 1100px) {
+    padding: 32px 16px;
+  }
+
   .redes-sociais {
     display: block;
 
@@ -81,16 +85,94 @@ export const ModalUi = styled(Modal)`
   }
 
   .body-modal {
+    .time-line {
+      width: 100%;
+      position: relative;
+      height: 100px;
+
+      .progressbar {
+        margin: 0;
+        padding: 0;
+        counter-reset: step;
+        position: absolute;
+        z-index: 11;
+        display: block;
+        width: 100%;
+      }
+      .progressbar li {
+        list-style-type: none;
+        width: 25%;
+        float: left;
+        font-size: 12px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .progressbar li:before {
+        width: 20px;
+        height: 20px;
+        content: '';
+        counter-increment: '';
+        line-height: 27px;
+        border: 4px solid #fff;
+        background-color: #d7d7d7;
+        display: block;
+        text-align: center;
+        margin: 0 auto 10px auto;
+        border-radius: 50%;
+      }
+      .progressbar li:after {
+        width: 100%;
+        height: 2px;
+        content: '';
+        position: absolute;
+        background-color: #d7d7d7;
+        top: 10px;
+        left: -50%;
+        z-index: -1;
+      }
+      .progressbar li:first-child:after {
+        content: none;
+        background-color: #d7d7d7;
+      }
+      .progressbar li.active {
+        color: black;
+      }
+      .progressbar li.active:before {
+        border: 4px solid #fff;
+        background-color: #f49d42;
+      }
+      .progressbar li.active + li:after {
+        background-color: #f49d42;
+      }
+    }
+
     h4 {
       font-size: 16px;
       font-weight: 700;
       text-align: center;
     }
 
+    h6 {
+      font-size: 16px;
+      color: #7f8183;
+      text-align: center;
+      margin-top: 32px;
+      margin-bottom: 16px;
+    }
+
+    .link-permissoes {
+      text-align: center;
+      margin-bottom: 46px;
+      a {
+        font-size: 18px;
+      }
+    }
+
     .list-pages {
       margin: 16px 32px;
       display: block;
-      max-height: 200px;
+      max-height: 250px;
       overflow-y: auto;
 
       ul {
@@ -105,8 +187,8 @@ export const ModalUi = styled(Modal)`
           margin-bottom: 1px;
 
           .imagem {
-            height: 90px;
-            width: 90px;
+            height: 70px;
+            width: 70px;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;

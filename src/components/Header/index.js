@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { RiArrowDownSLine } from 'react-icons/ri';
 import { BsFillGearFill } from 'react-icons/bs';
-import { AiOutlineDashboard, AiFillPieChart } from 'react-icons/ai';
+import {
+  AiOutlineDashboard,
+  AiFillPieChart,
+  AiOutlineMenu,
+} from 'react-icons/ai';
 import { MdShowChart } from 'react-icons/md';
 import {
   FaRegCalendarPlus,
@@ -19,6 +23,7 @@ import { TopHeader, HeaderUi } from './styles';
 import logoMlabs from '../../assets/logo-mlabs.png';
 
 const Header = () => {
+  const [openMenuResp, setOpenMenuResp] = useState(false);
   return (
     <>
       <TopHeader fluid>
@@ -39,11 +44,17 @@ const Header = () => {
       </TopHeader>
       <HeaderUi fluid>
         <Row className="align-items-center">
-          <Col xs={12} sm={12} lg={2} xl={2}>
+          <Col xs={12} sm={12} lg={3} xl={2} className="imagem-style">
             <img src={logoMlabs} alt="Logo MLABS" />
           </Col>
-          <Col xs={12} sm={12} lg={12} xl={10}>
-            <div className="opcoes">
+          <Col xs={12} sm={12} lg={9} xl={10}>
+            <div className="menu-opcao-responsivo">
+              <button onClick={() => setOpenMenuResp(!openMenuResp)}>
+                <AiOutlineMenu size={24} />
+                <span>Menu</span>
+              </button>
+            </div>
+            <div className={openMenuResp ? `opcoes open-opcoes` : 'opcoes'}>
               <ul>
                 <li className="active">
                   <a href="41">

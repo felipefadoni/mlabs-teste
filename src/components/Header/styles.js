@@ -52,6 +52,73 @@ export const HeaderUi = styled(Container)`
     width: 100%;
   }
 
+  .menu-opcao-responsivo {
+    display: none;
+    width: 100%;
+    text-align: right;
+
+    button {
+      background: transparent;
+      border: 0px;
+      font-size: 24px;
+      align-items: center;
+      justify-content: flex-end;
+      display: flex;
+      outline: none;
+
+      svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  @media (min-width: 0px) and (max-width: 620px) {
+    padding: 16px;
+
+    .imagem-style {
+      text-align: center;
+
+      img {
+        width: initial;
+      }
+    }
+
+    .menu-opcao-responsivo {
+      display: flex;
+    }
+  }
+
+  @media (min-width: 621px) and (max-width: 960px) {
+    padding: 16px;
+
+    .imagem-style {
+      text-align: center;
+
+      img {
+        width: initial;
+      }
+    }
+
+    .menu-opcao-responsivo {
+      display: block;
+    }
+  }
+
+  @media (min-width: 961px) and (max-width: 1100px) {
+    padding: 16px;
+
+    img {
+      width: initial;
+    }
+
+    .menu-opcao-responsivo {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
   .opcoes {
     display: block;
 
@@ -116,5 +183,63 @@ export const HeaderUi = styled(Container)`
         }
       }
     }
+
+    @media (min-width: 0) and (max-width: 1100px) {
+      display: none;
+
+      ul {
+        display: block;
+
+        li {
+          width: 100%;
+        }
+
+        li a svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        li a span {
+          font-size: 12px;
+        }
+      }
+    }
+
+    @media (min-width: 961px) and (max-width: 1200px) {
+      ul {
+        display: block;
+
+        li {
+          width: calc(100% / 4);
+          display: inline-block;
+        }
+
+        li a svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        li a span {
+          font-size: 12px;
+        }
+      }
+    }
+
+    @media (min-width: 1201px) and (max-width: 1400px) {
+      ul {
+        li a svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        li a span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .open-opcoes {
+    display: block !important;
   }
 `;
